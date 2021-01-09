@@ -44,8 +44,6 @@ function register_settings(){
 	add_option( 'vspotify_client', '24e3b411414f4fb597b6f383722fd9ee');
 	register_setting( VSPOTIFY_OPTION_GROUP, "vspotify_api-key");
 	add_option( 'vspotify_api-key', 'Q55fpB8aPx5L9WcnlPXaIpWzPNP4fEl2R0j8exL4');
-	register_setting( VSPOTIFY_OPTION_GROUP, "vspotify_callback");
-	add_option( 'vspotify_callback', '' . $protocol . $host . '/spotifycallback');
 }
 
 function create_callback(){
