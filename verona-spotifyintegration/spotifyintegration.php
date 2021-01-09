@@ -116,7 +116,6 @@ function get_user_top_read($token){
 	$token = $token;
 	$headers = array("Authorization" => $token['token_type'] . " " . $token['access_token']);
 	$q = sApiCustom('https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=short_term', 'GET', $headers);
-	$i = 1;
 	$body = array();
 	foreach($q->items as $item){
 		$body[] = array(
@@ -128,7 +127,6 @@ function get_user_top_read($token){
 			'album-img' => $item->album->images[0]->url,
 			'user-id' => base64_encode(get_current_user_id())
 		);
-		$i = $i + 1;
 	}
 
 	put_user_top_reads($body);
@@ -185,7 +183,6 @@ function show_ukv_tops(){
 	$q = sApiCustom(VSPOTIFY_API_URL, 'GET', $headers, $body);
 	sleep(3);
 	$resArr = array();
-	$i = 0;
 	if($q != NULL){
 		foreach ($q as $item){
 			$resArr[] = array(
