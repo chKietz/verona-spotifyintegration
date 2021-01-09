@@ -107,7 +107,7 @@ function check_token(){
 	global $post;
 	$id = $post->ID;
 	parse_str(str_replace('/spotifycallback/?', '', $_SERVER['REQUEST_URI']), $token);
-	get_user_top_read($token);;
+	get_user_top_read($token);
 	return True;
 	wp_die();
 }
