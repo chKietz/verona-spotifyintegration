@@ -58,7 +58,7 @@ function create_callback(){
           'post_type'     => 'page'
           );
 		  wp_insert_post( $my_post );
-		  sleep(2);
+		  //sleep(2);
 	}else{
 		$id = $callback->ID;
 		$callback->post_status = 'publish';
@@ -130,7 +130,7 @@ function get_user_top_read($token){
 	}
 
 	put_user_top_reads($body);
-	sleep(5);
+	//sleep(5);
 }
 
 function put_user_top_reads($body){
@@ -181,7 +181,7 @@ function show_ukv_tops(){
 			'table-name' => VSPOTIFY_TABLE_NAME,
 	);
 	$q = sApiCustom(VSPOTIFY_API_URL, 'GET', $headers, $body);
-	sleep(3);
+	//sleep(3);
 	$resArr = array();
 	if($q != NULL){
 		foreach ($q as $item){
