@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     ExistingData = get_Existing_Data(c, TableName)
     print(ExistingData)
     for item in ExistingData:
-        if item['userId']['N'] == str(event[0]['user-id']):
+        if item['userId']['S'] == str(event[0]['user-id']):
             last_updated = item['dateAdded']["S"]
             date_time_obj = datetime.strptime(last_updated, '%Y-%m-%d')
             time_since_insertion = datetime.now() - date_time_obj
