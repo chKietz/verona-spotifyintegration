@@ -12,7 +12,7 @@ register_activation_hook( __FILE__, 'vspot_create_table');
 define('IMGURL', plugin_dir_url(__FILE__) . 'assets/Spotify_Icon.png'); 
 define('LOADER', plugin_dir_url(__FILE__) . 'assets/ajax-loader.gif');
 define('VSPOTIFY_TABLE_NAME', 'spotify-ba-user-reads');
-define('VSPOTIFY_API_URL', 'https://ajec5zkbxf.execute-api.eu-west-1.amazonaws.com/ba_dev/table');
+define('VSPOTIFY_API_URL', 'YOUR_API_URL');
 define('VSPOTIFY_OPTION_GROUP', 'vspotify_option_group');
 
 add_action( 'wp_ajax_show_ukv_tops', 'show_ukv_tops' ); 
@@ -41,9 +41,9 @@ function register_settings(){
 	$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
 	$host = $_SERVER['HTTP_HOST'];
 	register_setting( VSPOTIFY_OPTION_GROUP, "vspotify_client");
-	add_option( 'vspotify_client', '24e3b411414f4fb597b6f383722fd9ee');
+	add_option( 'vspotify_client', 'YOUR_CLIENT_ID');
 	register_setting( VSPOTIFY_OPTION_GROUP, "vspotify_api-key");
-	add_option( 'vspotify_api-key', 'Q55fpB8aPx5L9WcnlPXaIpWzPNP4fEl2R0j8exL4');
+	add_option( 'vspotify_api-key', 'YOUR_API_KEY');
 }
 
 function create_callback(){
